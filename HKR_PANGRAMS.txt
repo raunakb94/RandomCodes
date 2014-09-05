@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+    {
+    int arr[26];
+    string str;
+    getline(cin,str);
+    memset(arr,0,sizeof(arr));
+    for(int i=0;i<str.size();i++)
+        {
+        if(str[i]!=' ')
+            {
+            if(str[i]<=90)
+                {
+                //Big
+                arr[str[i]-65]++;
+                //cout<<arr[str[i]-65]<<str[i]<<endl;
+            }
+            else
+                {
+                arr[str[i]-97]++;
+                //cout<<arr[str[i]-97]<<str[i]<<endl;
+            }
+        }
+    }
+    for(int i=0;i<26;i++)
+        {
+        //cout<<arr[i]<<endl;
+        if(arr[i]==0)
+            {
+            cout<<"not pangram";
+            return 0; 
+        }
+    }
+    cout<<"pangram";
+}
